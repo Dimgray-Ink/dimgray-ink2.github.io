@@ -1,0 +1,112 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+main {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+aside {
+  width: 15%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.list-group {
+  padding: 0;
+  margin: 0;
+}
+
+.footer {
+  height: 200px;
+  position: fixed;
+  bottom: 0;
+  width: 15%;
+  min-width: 250px;
+  display: flex;
+}
+
+.open,
+.close {
+  display: none;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  left: -50vw;
+}
+
+.bi {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.chart1 {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    min-height: 97vh;
+  }
+
+  main {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .open,
+  .close {
+    display: block;
+  }
+
+  .open {
+    position: absolute;
+  }
+
+  nav {
+    padding-top: 30px;
+  }
+
+  canvas {
+    flex-direction: row;
+  }
+
+  .ber_chart {
+    min-height: 230px;
+  }
+
+  .close {
+    position: absolute;
+  }
+
+  .list-group {
+    padding: 0;
+    margin: 0;
+  }
+
+  aside {
+    position: absolute;
+    left: -250px;
+    height: 100%;
+    transition: all 0.2s;
+    background: #ffffff;
+  }
+
+  input[type="checkbox"]:checked ~ aside {
+    left: 0;
+  }
+
+  input[type="checkbox"]:checked ~ .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8) !important;
+    z-index: 4;
+  }
+}
